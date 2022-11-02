@@ -1,55 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <script>
-        let array = ['rock', 'paper', 'scissor'];
-    let player_score=0;
-    let computer_score=0;
-    const getComputerChoice = () => {
-      let random = Math.floor((Math.random() * 3));
-      let randomNames = array[random];
-      return randomNames;
-    }
-    
-    const game = () => {
-     
-      for (let i = 0; i < 5; i++) {
-        let input = prompt('Choose rock, paper or scissor');
-        const playerSelection = input.toLowerCase();
-        const computerChoice = getComputerChoice();
-        
-        const computerWins = `Computer Wins! ${computerChoice} beats ${playerSelection}.`;
-        const playerWins = `Player wins! ${playerSelection} beats ${computerChoice}.`;
-        const tie = `It's a tie, ${playerSelection} is equal to ${computerChoice}.`;
-    
-        if (playerSelection !== 'rock' && playerSelection !== 'paper' && playerSelection !== 'scissor') {
-          i = i - 1;
-          alert("Nice try! Please enter a valid input.");
-        }
-        if (playerSelection === 'rock' && computerChoice === 'paper' || playerSelection === 'paper' && computerChoice === 'scissor' || playerSelection === 'scissor' && computerChoice === 'rock') {
-                computer_score+=1;
-            alert(computerWins);
-        } 
-        if (playerSelection === 'paper' && computerChoice === 'rock' || playerSelection === 'scissor' && computerChoice === 'paper' || playerSelection === 'rock' && computerChoice === 'scissor') {
-            player_score+=1;
-            alert(playerWins);
-        } else {
-            if (playerSelection === computerChoice) {
-              alert(tie);
-              }
-          }
-      }
-      alert("Computer:"+computer_score+' vs '+'Player:'+player_score);
-    }
-    
-    game();
-    
-    </script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Denis | Rock, Paper, Scissors</title>
+  </head>
+  <body>
+    <div class="container">
+      <p>Human Player Choose:</p>
+      <button class='rock'>Rock</button>
+      <button class='paper'>Paper</button>
+      <button class='scissors'>Scissors</button>
+    </div>
+    <div class="answers"></div>
+
+    <script src="script.js"></script>
+  </body>
 </html>
